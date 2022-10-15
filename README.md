@@ -1,5 +1,6 @@
 # kuralabs_deployment_3
 Deploying a flask application with two EC2s on two different VPCs utilizing a Jenkins server on one to build and test code from the GitHub repository and on the other utilizing a jenkins agent and node to deploy code with nginx and gunicorn.
+
 <img width="680" alt="Screen Shot 2022-10-15 at 8 48 53 AM" src="https://user-images.githubusercontent.com/108698688/195987273-ebaf97bc-eefd-4941-9c68-01cfc4217f22.png">
 
 ## Configure 2 Amazon EC2s with Jenkins server and agent respectfully
@@ -32,6 +33,7 @@ sudo nano /etc/nginx/sites-enabled/default
 - needed to restart nginx after edit nginx file for changes to apply
 - needed to install python3.10-venv as environment on Jenkins server EC2 as was receiving error in test stage
 ```
+
 <img width="536" alt="Screen Shot 2022-10-15 at 8 45 02 AM" src="https://user-images.githubusercontent.com/108698688/195987192-f364101e-81ac-49cb-9f55-ad757d06d3e4.png">
 
 - configure jenkins by navigating to http://PublicIPv4:8080
@@ -74,6 +76,7 @@ sudo apt install nginx
 
 1. Add slack notification system plugin to Jenkins 
 Navigate to manage Jenkins and configure system to add Slack workspace (https://kura-labs.slack.com) and add secret text credential which is Slack integration token credential ID 
+
 <img width="574" alt="Screen Shot 2022-10-15 at 8 51 14 AM" src="https://user-images.githubusercontent.com/108698688/195987353-834e6907-a5c7-4ca5-8c51-eae2a3afa07a.png">
 
 ```diff
@@ -95,6 +98,7 @@ def test_home_page():
     response = app.test_client().post('/')
     assert response.status_code == 405
 ```
+
 <img width="615" alt="Screen Shot 2022-10-15 at 8 52 07 AM" src="https://user-images.githubusercontent.com/108698688/195987382-fb483712-4f68-47d7-ae9e-adbcf8aa402c.png">
 
 ## Improvements
