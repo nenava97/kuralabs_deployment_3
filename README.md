@@ -18,8 +18,8 @@ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \ /usr
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \ https://pkg.jenkins.io/debian-stable binary/ | sudo tee \ /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get -y install jenkins
-sudo systemct1 enable jenkins
-sudo systemct1 start jenkins
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
 ```
 
 - Configure nginx file to ensure it will listen to port 5000 for gunicorn and then run it on http://127.0.0.1:8000
