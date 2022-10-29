@@ -22,7 +22,7 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 ```
 
-- Configure nginx file to ensure it will listen to port 5000 for gunicorn and then run it on http://127.0.0.1:8000
+- Configure nginx file to ensure it will listen to port 5000 for gunicorn and then run it on http://PublicIPv4:8000
 
 ```
 sudo nano /etc/nginx/sites-enabled/default
